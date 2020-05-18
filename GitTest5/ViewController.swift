@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioKit
 
 class ViewController: UIViewController {
 
@@ -14,8 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("2nd commit")
+        print("after audio Kit")
     }
-
-
 }
 
