@@ -11,11 +11,30 @@ import AudioKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    let midi = AudioKit.midi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("2nd commit")
-        print("after audio Kit")
+        print(midi.inputNames)
+        label.text = createInputNameString()
+
     }
+    
+    
+    func createInputNameString() -> String {
+        var result: String = ""
+        for input in midi.inputNames {
+            result += input + ", "
+        }
+        
+        return result
+    }
+    
+    
+    @IBAction func button(_ sender: UIButton) {
+        label.text = createInputNameString()
+    }
+    
 }
 
